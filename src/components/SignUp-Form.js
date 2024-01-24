@@ -3,12 +3,16 @@ import React from 'react';
 const SignUpForm = () => {
   <form>
     <div>
-      <label>Username</label>
-      <input type="text" name="username" />
+      <label htmlFor="username">
+        Username
+        <input type="text" id="username" name="username" />
+      </label>
     </div>
     <div>
-      <label>email</label>
-      <input type="email" name="email" />
+      <label htmlFor="email">
+        Email
+        <input type="email" id="email" name="email" />
+      </label>
     </div>
     <div>
       <input type="Submit" value="Sign Up" />
