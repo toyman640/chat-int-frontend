@@ -2,14 +2,51 @@
 
 @media (min-width: 768px) {
   .SignUpCover {
-    border: 1px solid red;
     width: 25%;
     margin-left: 37.5%;
+    margin-top: 5%;
   }
 
   .SignUpContent {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+  
+  .FormControl {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .Title {
+    margin-bottom: 0;
+  }
+
+  .Desc {
+    margin-top: 0;
+  }
+
+  .SignUpForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border: 1px solid #9fa6b2;
+    margin-top: 10%;
+    border-radius: 5px;
+  }
+
+  .MainForm {
+    width: 90%;
+  }
+
+  input {
+    border: 1px solid #9fa6b2;
+    width: 100%;
+    border-radius: 2px;
+    height: 30px;
+    margin-bottom: 5%;
+    margin-top: 2%;
   }
 }
