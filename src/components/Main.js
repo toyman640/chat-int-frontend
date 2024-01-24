@@ -1,12 +1,14 @@
 import React from 'react';
+import logo from '../home-logo.svg';
+import NavBar from './NavBar';
 
 const MainPage = () => (
   <div className="MainContainer">
-    <div>
-      1
+    <div className="SideBar">
+      <img src={logo} alt="logo" className="logo-img" />
     </div>
-    <div>
-      2
+    <div className="MainSection">
+      <NavBar />
     </div>
   </div>
 );

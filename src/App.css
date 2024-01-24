@@ -47,7 +47,7 @@
     width: 90%;
   }
 
-  input {
+  .FormInput {
     border: 1px solid #9fa6b2;
     width: 100%;
     border-radius: 2px;
@@ -57,7 +57,7 @@
     padding: 1%;
   }
 
-  input:focus {
+  .FormInput:focus {
     border-color: #007bff;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(0, 123, 255, 0.6);
     outline: 0 none;
@@ -72,5 +72,23 @@
     background-color: #3b71ca;
     border-radius: 3px;
     height: 40px;
+  }
+
+  .MainContainer {
+    display: flex;
+  }
+
+  .SideBar {
+    border: 1px solid red;
+    width: 15%;
+  }
+
+  .MainSection {
+    border: 1px solid green;
+    width: 85%;
+  }
+
+  .NavBar {
+    display: flex;
   }
 }

@@ -12,14 +12,14 @@ const LogInForm = () => (
         <label className="Label" htmlFor="Email Address">
           Email Address
           <br />
-          <input type="email" id="Email Address" name="username" placeholder="jonedoe123" />
+          <input className="FormInput" type="email" id="Email Address" name="username" placeholder="jonedoe123" />
         </label>
       </div>
       <div className="FormControl">
         <label className="Label" htmlFor="Password">
           Password
           <br />
-          <input type="password" id="password" name="password" placeholder="jonedoe123@gmail.com" />
+          <input type="password" className="FormInput" id="password" name="password" placeholder="jonedoe123@gmail.com" />
         </label>
       </div>
       <div>

@@ -9,28 +9,28 @@ const SignUpForm = () => (
         <label className="Label" htmlFor="username">
           Username
           <br />
-          <input type="text" id="username" name="username" placeholder="jonedoe123" />
+          <input type="text" id="username" className="FormInput" name="username" placeholder="jonedoe123" />
         </label>
       </div>
       <div className="FormControl">
         <label className="Label" htmlFor="email">
           Email
           <br />
-          <input type="email" id="email" name="email" placeholder="jonedoe123@gmail.com" />
+          <input type="email" id="email" className="FormInput" name="email" placeholder="jonedoe123@gmail.com" />
         </label>
       </div>
       <div className="FormControl">
         <label className="Label" htmlFor="Password">
           Password
           <br />
-          <input type="password" id="password" name="password" />
+          <input type="password" className="FormInput" id="password" name="password" />
         </label>
       </div>
       <div className="FormControl">
         <label className="Label" htmlFor="Confirm Password">
           Confirm Password
           <br />
-          <input type="password" id="Confirm-Password" name="password" />
+          <input type="password" className="FormInput" id="Confirm-Password" name="password" />
         </label>
       </div>
 
