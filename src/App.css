@@ -6,4 +6,10 @@
     width: 25%;
     margin-left: 37.5%;
   }
+
+  .SignUpContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
