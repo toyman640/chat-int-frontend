@@ -1,18 +1,18 @@
 import React from 'react';
 import logo from '../home-logo.svg';
-import SignUpForm from './SignUp-Form';
+import LogInForm from './LogIn-Form';
 
-const SignUp = () => (
+const LogIn = () => (
   <>
     <div className="SignUpCover">
       <div className="SignUpContent">
         <img src={logo} alt="logo" className="logo-img" />
         <div className="SignUpForm">
-          <SignUpForm />
+          <LogInForm />
         </div>
       </div>
     </div>
   </>
 );
 
-export default SignUp;
+export default LogIn;
