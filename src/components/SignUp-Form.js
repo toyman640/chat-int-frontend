@@ -3,21 +3,21 @@ import React from 'react';
 const SignUpForm = () => (
   <form className="MainForm">
     <div className="FormControl">
-      <label htmlFor="username">
+      <label className="Label" htmlFor="username">
         Username
         <br />
-        <input type="text" id="username" name="username" />
+        <input type="text" id="username" name="username" placeholder="jonedoe123" />
       </label>
     </div>
     <div className="FormControl">
-      <label htmlFor="email">
+      <label className="Label" htmlFor="email">
         Email
         <br />
-        <input type="email" id="email" name="email" />
+        <input type="email" id="email" name="email" placeholder="jonedoe123@gmail.com" />
       </label>
     </div>
     <div>
-      <input type="Submit" value="Sign Up" />
+      <input type="Submit" className="FormButton" value="Sign Up" />
     </div>
   </form>
 );
