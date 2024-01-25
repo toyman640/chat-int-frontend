@@ -90,5 +90,24 @@
 
   .NavBar {
     display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin-left: 5%;
+  }
+
+  .ProfileImage {
+    height: 50px;
+  }
+
+  .NotifyBell {
+    height: 20px;
+    padding: 2%;
+    margin-top: 10%;
+    border: 1px solid #9fa6b2;
+    border-radius: 5px;
+  }
+
+  .NavItem2 {
+    display: flex;
   }
 }

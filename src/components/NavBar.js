@@ -8,10 +8,10 @@ const NavBar = () => (
       <input type="text" placeholder="Search for house" />
       <input type="text" placeholder="location" />
     </form>
-    <div>
-      <img src={bell} alt="logo" className="logo-img" />
-      <div>
-        <img src={profilePic} alt="logo" className="logo-img" />
+    <div className="NavItem2">
+      <img src={bell} alt="logo" className="NotifyBell" />
+      <div className="NavItem2">
+        <img src={profilePic} alt="logo" className="ProfileImage" />
         <p>John Doe</p>
       </div>
     </div>
