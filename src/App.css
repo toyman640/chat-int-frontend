@@ -68,9 +68,12 @@
 
   .FormButton {
     color: #fff;
+    width: 100%;
     background-color: #3b71ca;
     border-radius: 3px;
     height: 40px;
+    border: none;
+    margin-bottom: 5%;
   }
 
   .MainContainer {
