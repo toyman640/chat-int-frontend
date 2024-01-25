@@ -12,7 +12,7 @@ const NavBar = () => (
       <img src={bell} alt="logo" className="NotifyBell" />
       <div className="NavItem2">
         <img src={profilePic} alt="logo" className="ProfileImage" />
-        <p>John Doe</p>
+        <p>Jane Doe</p>
       </div>
     </div>
   </div>
