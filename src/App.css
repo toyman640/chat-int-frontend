@@ -1,5 +1,4 @@
 
-
 @media (min-width: 768px) {
   .SignUpCover {
     width: 25%;
@@ -12,7 +11,7 @@
     flex-direction: column;
     align-items: center;
   }
-  
+
   .FormControl {
     display: flex;
     flex-direction: column;
