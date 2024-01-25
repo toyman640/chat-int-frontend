@@ -139,20 +139,19 @@
     height: 30px;
     margin-top: 2%;
   }
-  
+
   .Bar1,
   .Bar2 {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
   }
-  
+
   .Bar1 {
     /* width: 40%; */
   }
-  
+
   .Bar2 {
     /* width: 20%; */
   }
-  
 }
