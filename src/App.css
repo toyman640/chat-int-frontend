@@ -1,38 +1,112 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media (min-width: 768px) {
+  .SignUpCover {
+    width: 25%;
+    margin-left: 37.5%;
+    margin-top: 5%;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .SignUpContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-  to {
-    transform: rotate(360deg);
+
+  .FormControl {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .Title {
+    margin-bottom: 0;
+    font-size: 1.5em;
+    font-weight: 400;
+  }
+
+  .Desc {
+    margin-top: 0;
+  }
+
+  .Label {
+    color: #9fa6b2;
+  }
+
+  .SignUpForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border: 1px solid #9fa6b2;
+    margin-top: 10%;
+    border-radius: 5px;
+  }
+
+  .MainForm {
+    width: 90%;
+  }
+
+  .FormInput {
+    border: 1px solid #9fa6b2;
+    width: 100%;
+    border-radius: 2px;
+    height: 30px;
+    margin-bottom: 5%;
+    margin-top: 2%;
+    padding: 1%;
+  }
+
+  .FormInput:focus {
+    border-color: #007bff;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(0, 123, 255, 0.6);
+    outline: 0 none;
+  }
+
+  /* .FormControl label input::placeholder {
+    margin-left: 10p;
+  } */
+
+  .FormButton {
+    color: #fff;
+    background-color: #3b71ca;
+    border-radius: 3px;
+    height: 40px;
+  }
+
+  .MainContainer {
+    display: flex;
+  }
+
+  .SideBar {
+    border: 1px solid red;
+    width: 15%;
+  }
+
+  .MainSection {
+    border: 1px solid green;
+    width: 85%;
+  }
+
+  .NavBar {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin-left: 5%;
+  }
+
+  .ProfileImage {
+    height: 50px;
+  }
+
+  .NotifyBell {
+    height: 20px;
+    padding: 2%;
+    margin-top: 10%;
+    border: 1px solid #9fa6b2;
+    border-radius: 5px;
+  }
+
+  .NavItem2 {
+    display: flex;
   }
 }
