@@ -39,5 +39,6 @@ const usersSlice = createSlice({
         error: action.err.message,
       }));
   },
-
 })
+
+export default usersSlice.reducer;
