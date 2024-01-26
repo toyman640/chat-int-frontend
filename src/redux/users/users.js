@@ -1,12 +1,11 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios'
+import axios from 'axios';
 
-const BACKEND_API_URL= 'http://127.0.0.1:8000/api/'
+const BACKEND_API_URL = 'http://127.0.0.1:8000/api/users/';
 
 const initialState = {
-  users: []
-}
-
+  users: [],
+};
 
 export const fetchUsers = createAsyncThunk('users/fetchUsers', async () => {
   try {
@@ -31,7 +30,7 @@ const usersSlice = createSlice({
       .addCase(fetchUsers.fulfilled, (state, action) => ({
         ...state,
         loading: false,
-        categories: action.payload,
+        users: action.payload,
       }))
       .addCase(fetchUsers.rejected, (state, action) => ({
         ...state,
@@ -39,6 +38,6 @@ const usersSlice = createSlice({
         error: action.err.message,
       }));
   },
-})
+});
 
 export default usersSlice.reducer;
