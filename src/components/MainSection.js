@@ -15,7 +15,7 @@ const MainSection = () => {
       {users.map((user) => (
         <div key={user.id}>
           <p>
-          {user.username}
+            {user.username}
             {user.username}
             {user.email}
           </p>
