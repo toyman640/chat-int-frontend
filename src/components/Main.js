@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from '../home-logo.svg';
 import NavBar from './NavBar';
+import MainSection from './MainSection';
 
 const MainPage = () => (
   <div className="MainContainer">
@@ -9,6 +10,7 @@ const MainPage = () => (
     </div>
     <div className="MainSection">
       <NavBar />
+      <MainSection />
     </div>
   </div>
 );
