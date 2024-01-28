@@ -38,7 +38,7 @@ const SignUpForm = () => {
           <label className="Label" htmlFor="email">
             Full Name
             <br />
-            <input type="email" id="email" className="FormInput" name="name" placeholder="jonedoe123@gmail.com" />
+            <input type="text" id="name" className="FormInput" name="name" placeholder="jonedoe123@gmail.com" />
           </label>
         </div>
         <div className="FormControl">
