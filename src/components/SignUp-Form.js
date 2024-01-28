@@ -1,23 +1,28 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { createUsers } from '../redux/users/users';
 
 const SignUpForm = () => {
+  const dispatch = useDispatch();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     const form = event.target;
-    const username = form.username.value
-    const name = form.full-name.value;
-    const email = form.email.value
-    const passowrd = form.password.value;
+    const username = form.username.value;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
     const newUser = {
       username,
       name,
       email,
-      passowrd
+      password,
     };
-  }
+    dispatch(createUsers(newUser));
+    form.reset();
+  };
 
-  return(
+  return (
     <>
       <p className="Title">Sign Up</p>
       <p className="Desc">Create an account</p>
@@ -33,11 +38,11 @@ const SignUpForm = () => {
           <label className="Label" htmlFor="email">
             Full Name
             <br />
-            <input type="email" id="email" className="FormInput" name="full-name" placeholder="jonedoe123@gmail.com" />
+            <input type="email" id="email" className="FormInput" name="name" placeholder="jonedoe123@gmail.com" />
           </label>
         </div>
         <div className="FormControl">
-         
+
           <label className="Label" htmlFor="email">
             Email
             <br />
@@ -51,20 +56,20 @@ const SignUpForm = () => {
             <input type="password" className="FormInput" id="password" name="password" />
           </label>
         </div>
-        <div className="FormControl">
+        {/* <div className="FormControl">
           <label className="Label" htmlFor="Confirm Password">
             Confirm Password
             <br />
             <input type="password" className="FormInput" id="Confirm-Password" name="password" />
           </label>
-        </div>
-  
+        </div> */}
+
         <div>
           <input type="Submit" className="FormButton" value="Sign Up" />
         </div>
       </form>
     </>
-  )
+  );
 };
 
 export default SignUpForm;
