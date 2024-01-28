@@ -5,6 +5,7 @@ import { createUsers } from '../redux/users/users';
 const SignUpForm = () => {
   const dispatch = useDispatch();
   const [successMessage, setSuccessMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -19,20 +20,13 @@ const SignUpForm = () => {
       email,
       password,
     };
-    // dispatch(createUsers(newUser));
-    // form.reset();
+
     try {
-      // Dispatch the createUsers action
       dispatch(createUsers(newUser));
-
-      // Set the success message
       setSuccessMessage('User created successfully!');
-
-      // Reset the form
       form.reset();
     } catch (error) {
-      // Handle error if user creation fails
-      console.error('Error creating user:', error);
+      setErrorMessage('User creation failed. Please try again.');
     }
   };
 
@@ -41,6 +35,7 @@ const SignUpForm = () => {
       <p className="Title">Sign Up</p>
       <p className="Desc">Create an account</p>
       {successMessage && <p className="SuccessMessage">{successMessage}</p>}
+      {errorMessage && <p className="ErrorMessage">{errorMessage}</p>}
       <form className="MainForm" onSubmit={handleSubmit}>
         <div className="FormControl">
           <label className="Label" htmlFor="username">
