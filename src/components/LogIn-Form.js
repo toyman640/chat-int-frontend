@@ -13,34 +13,15 @@ const LogInForm = () => {
     const form = e.target;
     const username = form.username.value;
     const password = form.password.value;
-
-    // try {
-    //   const response = await dispatch(loginUser({ username, password }));
-    //   // Check if the login was successful based on the response
-    //   if (response && response.error) {
-    //     // Display error message
-    //     setErrorMessage('Password or Username incorrect');
-    //   } else {
-    //     // Navigate to the home page or handle successful login
-    //     navigate('/home-page');
-    //   }
-    // } catch (error) {
-    //   console.error('Login failed:', error);
-    //   setErrorMessage('An unexpected error occurred. Please try again.');
-    // }
     dispatch(loginUser({ username, password }))
       .then((response) => {
-        // Check if the login was successful based on the response
         if (response && response.error) {
-          // Display error message
           setErrorMessage('Password or Username incorrect');
         } else {
-          // Navigate to the home page or handle successful login
           navigate('/home-page');
         }
       })
-      .catch((error) => {
-        console.error('Login failed:', error);
+      .catch(() => {
         setErrorMessage('An unexpected error occurred. Please try again.');
       });
   };
