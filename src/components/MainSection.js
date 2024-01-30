@@ -1,16 +1,37 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchUsers } from '../redux/users/users';
-import Chat from './Chat';
+import { fetchMessages } from '../redux/users/messages';
 
-const MainSection = () => {
+const MainSection = ({ receiverUserId }) => {
   const dispatch = useDispatch();
-  const users = useSelector((state) => state.users.users);
   const user = useSelector((state) => state.user.user);
+  const messages = useSelector((state) => state.messages.messages);
+  const users = useSelector((state) => state.users.users);
 
   useEffect(() => {
-    dispatch(fetchUsers());
-  }, [dispatch]);
+    const fetchData = async () => {
+      await dispatch(fetchUsers());
+      if (user && receiverUserId) {
+        await dispatch(fetchMessages(receiverUserId));
+      }
+    };
+
+    fetchData();
+  }, [dispatch, user, receiverUserId]);
+
+  // Filter messages where the current user is the receiver
+  const filteredMessages = messages.filter(
+    (message) => message.receiver === user.user_id,
+  );
+
+  // Function to get sender's username
+  const getSenderUsername = (senderId) => {
+    const sender = users.find((u) => u.id === senderId);
+    return sender ? sender.username : 'Unknown Sender';
+  };
+
   return (
     <div className="MainContainer">
       <div>
@@ -20,29 +41,32 @@ const MainSection = () => {
           {user.username}
           {user.name}
         </p>
-        <h2>Users</h2>
-        {users.map((currentUser) => (
-          <div key={currentUser.id}>
-            <div>
+        <h2>Messages</h2>
+        <div>
+          {filteredMessages.map((message) => (
+            <div key={message.id}>
               <p>
-                {currentUser.username}
-                {currentUser.username}
-                {currentUser.email}
+                Sender:
+                {getSenderUsername(message.sender)}
               </p>
-
+              <p>
+                Content:
+                {message.content}
+              </p>
+              <p>
+                Timestamp:
+                {message.timestamp}
+              </p>
             </div>
-            <div>
-              {currentUser.id !== user.user_id ? (
-                <Chat key={currentUser.id} receiverUserId={currentUser.id} />
-              ) : (
-                <div>No chat</div>
-              )}
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
+};
+
+MainSection.propTypes = {
+  receiverUserId: PropTypes.number.isRequired,
 };
 
 export default MainSection;
