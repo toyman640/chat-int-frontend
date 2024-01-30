@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { fetchUsers } from '../redux/users/users';
 import { fetchMessages } from '../redux/users/messages';
 import avatar from '../user-avatar.svg';
+import ChatHouse from './ChatHouse';
 
 const MainSection = ({ receiverUserId }) => {
   const dispatch = useDispatch();
@@ -45,7 +46,7 @@ const MainSection = ({ receiverUserId }) => {
 
   return (
     <div className="MainContainer">
-      <div>
+      <div className="InboxSection">
         <p>
           The logged user is
           {user.user_id}
@@ -53,7 +54,7 @@ const MainSection = ({ receiverUserId }) => {
           {user.name}
         </p>
         <h2>Messages</h2>
-        <div className="InboxSection">
+        <div>
           <p className="InboxTitle">Inbox</p>
           <input type="text" placeholder="Search for message" />
           <div>
@@ -77,6 +78,9 @@ const MainSection = ({ receiverUserId }) => {
             ))}
           </div>
         </div>
+      </div>
+      <div className="ChatPart">
+        <ChatHouse />
       </div>
     </div>
   );
