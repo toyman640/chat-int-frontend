@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchUsers } from '../redux/users/users';
 import { fetchMessages } from '../redux/users/messages';
+import avatar from '../user-avatar.svg';
 
 const MainSection = ({ receiverUserId }) => {
   const dispatch = useDispatch();
@@ -26,6 +27,16 @@ const MainSection = ({ receiverUserId }) => {
     (message) => message.receiver === user.user_id,
   );
 
+  const formatTime = (timestamp) => {
+    const options = {
+      hour: 'numeric',
+      minute: 'numeric',
+      hour12: true,
+    };
+
+    return new Date(timestamp).toLocaleTimeString([], options);
+  };
+
   // Function to get sender's username
   const getSenderUsername = (senderId) => {
     const sender = users.find((u) => u.id === senderId);
@@ -42,23 +53,29 @@ const MainSection = ({ receiverUserId }) => {
           {user.name}
         </p>
         <h2>Messages</h2>
-        <div>
-          {filteredMessages.map((message) => (
-            <div key={message.id}>
-              <p>
-                Sender:
-                {getSenderUsername(message.sender)}
-              </p>
-              <p>
-                Content:
-                {message.content}
-              </p>
-              <p>
-                Timestamp:
-                {message.timestamp}
-              </p>
-            </div>
-          ))}
+        <div className="InboxSection">
+          <p className="InboxTitle">Inbox</p>
+          <input type="text" placeholder="Search for message" />
+          <div>
+            {filteredMessages.map((message) => (
+              <div key={message.id} className="MessageBar">
+                <img src={avatar} alt="logo" className="AvatarImg" />
+                <div>
+                  <p className="MessageName">
+                    {getSenderUsername(message.sender)}
+                  </p>
+                  <p className="MessageContent">
+                    {message.content}
+                  </p>
+                </div>
+                <div>
+                  <p className="TimeStamp">
+                    {formatTime(message.timestamp)}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

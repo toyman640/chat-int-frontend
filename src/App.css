@@ -78,6 +78,8 @@
 
   .MainContainer {
     display: flex;
+    min-height: 100vh;
+    
   }
 
   .SideBar {
@@ -153,5 +155,42 @@
 
   .Bar2 {
     /* width: 20%; */
+  }
+
+  .InboxSection {
+    border: 1px solid red;
+    padding-left: 2%;
+    background-color: #edf2f4;
+    height: 100vh;
+  }
+
+  .InboxTitle {
+    font-size: 1.5em;
+    font-weight: 600;
+  }
+
+  .AvatarImg {
+    height: 30px;
+    margin-top: 10%;
+    border-radius: 50px;
+  }
+
+  .MessageBar {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .MessageName {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .MessageContent {
+    margin-top: 2%;
+  }
+
+  .TimeStamp {
+    font-size: 0.6em;
+    margin-top: 50%;
   }
 }
