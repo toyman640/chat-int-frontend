@@ -78,11 +78,13 @@
 
   .MainContainer {
     display: flex;
+    min-height: 100vh;
   }
 
   .SideBar {
     border: 1px solid red;
     width: 15%;
+    background-color: #00308f;
   }
 
   .MainSection {
@@ -153,5 +155,58 @@
 
   .Bar2 {
     /* width: 20%; */
+  }
+
+  .InboxSection {
+    border: 1px solid red;
+    padding-left: 2%;
+    background-color: #edf2f4;
+    height: 100vh;
+    width: 25%;
+  }
+
+  .ChatPart {
+    border: 1px solid red;
+    width: 75%;
+  }
+
+  .InboxTitle {
+    font-size: 1.5em;
+    font-weight: 600;
+  }
+
+  .AvatarImg {
+    height: 30px;
+    margin-top: 6%;
+    border-radius: 50px;
+  }
+
+  .MessageBar {
+    display: flex;
+    justify-content: space-around;
+    border: 0;
+    width: 90%;
+  }
+
+  .MessageName {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .MessageContent {
+    margin-top: 2%;
+    margin-left: 0;
+  }
+
+  .TimeStamp {
+    font-size: 0.6em;
+    margin-top: 50%;
+  }
+
+  .MessageMiddle {
+    display: flex;
+    flex-direction: column;
+
+    /* align-items: start; */
   }
 }
