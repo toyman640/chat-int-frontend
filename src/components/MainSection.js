@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchUsers } from '../redux/users/users';
 import { fetchMessages } from '../redux/users/messages';
 import avatar from '../user-avatar.svg';
 import ChatHouse from './ChatHouse';
+import Chat from './Chat';
 
 const MainSection = ({ receiverUserId }) => {
   const dispatch = useDispatch();
@@ -44,6 +45,37 @@ const MainSection = ({ receiverUserId }) => {
     return sender ? sender.username : 'Unknown Sender';
   };
 
+  // Local state to manage whether to display ChatHouse or Chat
+  const [showChat, setShowChat] = useState(false);
+
+  // Local state to store the senderId when a message is clicked
+  const [clickedMessageSenderId, setClickedMessageSenderId] = useState(null);
+
+  // Function to handle message click
+  const handleMessageClick = (senderId) => {
+    setShowChat(true);
+    setClickedMessageSenderId(senderId);
+  };
+
+  // Function to get the latest message from each sender
+  const getLatestMessages = () => {
+    const latestMessages = [];
+    const senderIds = new Set();
+
+    // Iterate over messages in reverse order to get the latest message from each sender
+    for (let i = filteredMessages.length - 1; i >= 0; i -= 1) {
+      const message = filteredMessages[i];
+      if (!senderIds.has(message.sender)) {
+        senderIds.add(message.sender);
+        latestMessages.unshift(message);
+      }
+    }
+
+    return latestMessages;
+  };
+
+  const latestMessages = getLatestMessages();
+
   return (
     <div className="MainContainer">
       <div className="InboxSection">
@@ -58,10 +90,15 @@ const MainSection = ({ receiverUserId }) => {
           <p className="InboxTitle">Inbox</p>
           <input type="text" placeholder="Search for message" />
           <div>
-            {filteredMessages.map((message) => (
-              <div key={message.id} className="MessageBar">
+            {latestMessages.map((message) => (
+              <button
+                key={message.id}
+                type="button"
+                className="MessageBar"
+                onClick={() => handleMessageClick(message.sender)}
+              >
                 <img src={avatar} alt="logo" className="AvatarImg" />
-                <div>
+                <div className="MessageMiddle">
                   <p className="MessageName">
                     {getSenderUsername(message.sender)}
                   </p>
@@ -74,13 +111,17 @@ const MainSection = ({ receiverUserId }) => {
                     {formatTime(message.timestamp)}
                   </p>
                 </div>
-              </div>
+              </button>
             ))}
           </div>
         </div>
       </div>
       <div className="ChatPart">
-        <ChatHouse />
+        {showChat ? (
+          <Chat receiverUserId={clickedMessageSenderId} senderId={user.user_id} />
+        ) : (
+          <ChatHouse />
+        )}
       </div>
     </div>
   );

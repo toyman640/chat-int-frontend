@@ -1,5 +1,4 @@
 import React from 'react';
-import Chat from './Chat';
 
 const ChatHouse = () => (
   <div>
@@ -7,9 +6,6 @@ const ChatHouse = () => (
       <p>
         Click on chat to read conversation
       </p>
-    </div>
-    <div>
-      <Chat />
     </div>
   </div>
 );
