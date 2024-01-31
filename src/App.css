@@ -79,13 +79,12 @@
   .MainContainer {
     display: flex;
     min-height: 100vh;
-    
   }
 
   .SideBar {
     border: 1px solid red;
     width: 15%;
-    background-color: #00308F;
+    background-color: #00308f;
   }
 
   .MainSection {
@@ -207,6 +206,7 @@
   .MessageMiddle {
     display: flex;
     flex-direction: column;
+
     /* align-items: start; */
   }
 }
